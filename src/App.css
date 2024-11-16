@@ -1,38 +1,235 @@
-.App {
-  text-align: center;
+.app {
+  min-height: 100vh;
+  background-color: #f4f5f8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.display-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.dropdown-item select {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.board {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+@media (min-width: 1024px) {
+  .board {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .board {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.column {
+  background-color: #f4f5f8;
   display: flex;
   flex-direction: column;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.column-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.ticket-count {
+  color: #6b6f76;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-id {
+  color: #6b6f76;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 15px;
+  margin-bottom: 12px;
+  margin-left: 7px;
+}
+
+.card-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  display: flex;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: #f4f5f8;
+  font-size: 13px;
+  color: #6b6f76;
+}
+
+.user-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 12px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.user-add-dot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.group-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 16px;
+}
+
+.ticket-count {
+  font-size: 14px;
+  color: gray;
+  display: flex;
+  justify-content: end;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.group-class {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.priority-class {
+  display: flex;
+  align-items: start;
+  padding-top: 5px;
+}
+.priority {
+  margin-top: 1px;
+}
+.urgent-grey {
+  display: flex;
+}
+
+.grey-filled {
+  margin: 2px;
+}
+
+.urgent-grey2 {
+  margin-top: 7px;
+}
+
+.outermost {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.urgentGrey {
+  padding: 4px;
+  margin-right: 4px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.greyFill {
+  padding: 2px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.empty-card {
+  padding: 20px;
+  background-color: white;
+  border: 1px dashed #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  color: #6b6f76;
+  font-size: 14px;
+}
+.innerGreyFill {
+  margin-right: 5px;
 }
